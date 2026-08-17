@@ -200,9 +200,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------------------------------------------------------
      4. Scroll reveal animations (.reveal + shared blocks)
   --------------------------------------------------------------- */
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const revealTargets = [
     ".reveal",
-    ".section-head",
     ".feature-card",
     ".use-case-card",
     ".integration-card",
@@ -211,27 +212,47 @@ document.addEventListener("DOMContentLoaded", () => {
     ".team-card",
     ".value-card",
     ".timeline-item",
-    ".price-card",
     ".testimonial-card",
     ".stat-tile",
     ".chart-card",
     ".cta-panel",
     ".contact-panel",
+    ".overview-visual",
   ];
 
-  document.querySelectorAll(revealTargets.join(",")).forEach((el) => {
-    gsap.from(el, {
-      y: 46,
-      opacity: 0,
-      duration: 0.85,
-      ease: "power3.out",
-      scrollTrigger: { trigger: el, start: "top 88%", once: true },
+  if (!prefersReducedMotion) {
+    document.querySelectorAll(revealTargets.join(",")).forEach((el) => {
+      gsap.from(el, {
+        y: 46,
+        opacity: 0,
+        duration: 0.85,
+        ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 88%", once: true },
+      });
     });
-  });
+  }
+
+  /* ---------------------------------------------------------------
+     4a. Section heads — staggered children reveal
+  --------------------------------------------------------------- */
+  if (!prefersReducedMotion) {
+    document.querySelectorAll(".section-head").forEach((head) => {
+      const children = head.querySelectorAll(".section-tag, h2, h3, .section-sub");
+      gsap.from(children, {
+        y: 28,
+        opacity: 0,
+        duration: 0.75,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: { trigger: head, start: "top 88%", once: true },
+      });
+    });
+  }
 
   // Staggered lists
-  document.querySelectorAll(".check-list li").forEach((li, i) => {
-    gsap.from(li, {
+  if (!prefersReducedMotion) {
+    document.querySelectorAll(".check-list li").forEach((li, i) => {
+      gsap.from(li, {
       x: -26,
       opacity: 0,
       duration: 0.55,
@@ -240,6 +261,49 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: { trigger: li.closest(".check-list"), start: "top 92%", once: true },
     });
   });
+  }
+
+  /* ---------------------------------------------------------------
+     4b. Overview images — subtle scale-in
+  --------------------------------------------------------------- */
+  if (!prefersReducedMotion) {
+    document.querySelectorAll(".overview-img").forEach((img) => {
+      gsap.from(img, {
+        scale: 0.92,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: { trigger: img, start: "top 88%", once: true },
+      });
+    });
+
+    /* ---------------------------------------------------------------
+       4c. Float cards — staggered fade-in
+    --------------------------------------------------------------- */
+    document.querySelectorAll(".float-card").forEach((card, i) => {
+      gsap.from(card, {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        delay: 0.15 + i * 0.12,
+        ease: "power3.out",
+        scrollTrigger: { trigger: card.closest(".video-wrapper") || card, start: "top 85%", once: true },
+      });
+    });
+
+    /* ---------------------------------------------------------------
+       4d. Video wrapper — smooth reveal
+    --------------------------------------------------------------- */
+    document.querySelectorAll(".video-wrapper").forEach((wrap) => {
+      gsap.from(wrap, {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: wrap, start: "top 88%", once: true },
+      });
+    });
+  }
 
   /* ---------------------------------------------------------------
      5. Parallax ambient orbs
