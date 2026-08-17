@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to Stackly — access your admin or user dashboard." />
+  <title>Login — Stackly Cloud Monitoring</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2 4 5.5v5.6c0 5.1 3.4 9.8 8 10.9 4.6-1.1 8-5.8 8-10.9V5.5L12 2z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body class="auth-page">
+
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+
+  <!-- ======= Login ======= -->
+  <main class="auth-main">
+    <section class="auth-card page-load">
+      <div class="auth-logo-row">
+        <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+      </div>
+      <h1 class="auth-title">Welcome back</h1>
+      <p class="auth-sub">Sign in to continue to your dashboard.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="loginName">Full Name</label>
+          <input type="text" class="form-control" id="loginName" placeholder="Jane Doe" minlength="2" data-validate="name" required />
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="loginEmail">Email address</label>
+          <input type="email" class="form-control" id="loginEmail" placeholder="you@company.com" required />
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="loginPassword">Password</label>
+          <div class="password-wrap">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" minlength="8" required />
+            <button type="button" class="pass-toggle" data-target="#loginPassword">Show</button>
+          </div>
+          <div class="invalid-feedback">Password must be at least 8 characters and include an uppercase letter, a lowercase letter, a number, and a special character.</div>
+        </div>
+
+        <div class="mb-3">
+          <span class="auth-label form-label">Login as</span>
+          <div class="type-options">
+            <label class="type-option">
+              <input type="radio" name="accountType" value="admin" />
+              <span class="type-ico">&#11072;</span>
+              <span class="type-txt"><b>Admin</b><small>Full platform access</small></span>
+            </label>
+            <label class="type-option">
+              <input type="radio" name="accountType" value="user" />
+              <span class="type-ico">&#9675;</span>
+              <span class="type-txt"><b>User</b><small>Standard access</small></span>
+            </label>
+          </div>
+          <div class="invalid-feedback" id="accountTypeFeedback">Please select an account type (Admin or User).</div>
+        </div>
+
+        <div class="auth-row-between mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberMe" />
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+          </div>
+          <a href="404.html" class="small text-decoration-none fw-semibold">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-submit">Login</button>
+
+        <p class="auth-alt">Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+        <a href="index.html" class="btn btn-outline-light w-100 mt-2">Go to Home</a>
+      </form>
+    </section>
+  </main>
+
+  <footer class="auth-footer">&copy; 2026 Stackly. All rights reserved.</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly live monitoring dashboard demo — uptime, traffic, latency, and service health charts." />
+  <title>Live Demo — Stackly Cloud Monitoring</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2 4 5.5v5.6c0 5.1 3.4 9.8 8 10.9 4.6-1.1 8-5.8 8-10.9V5.5L12 2z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- ======= Navbar ======= -->
+  <nav class="navbar navbar-expand-lg fixed-top main-nav" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 nav-cta">
+          <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+          <a href="dashboard.html" class="btn btn-primary btn-sm btn-glow">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= Dashboard ======= -->
+  <main class="dashboard-page">
+    <div class="container">
+
+      <div class="dash-topbar page-load">
+        <div>
+          <h1>Production Overview</h1>
+          <p>Demo workspace · simulated data</p>
+        </div>
+        <div class="dash-time"><span class="live-dot"></span> LIVE · Updated just now</div>
+      </div>
+
+      <!-- KPI row -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card page-load">
+            <div class="kpi-label">Uptime <span>30d</span></div>
+            <div class="kpi-value">99.98%</div>
+            <span class="kpi-delta up">▲ 0.02% vs last period</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card page-load">
+            <div class="kpi-label">Requests <span>24h</span></div>
+            <div class="kpi-value">1.24M</div>
+            <span class="kpi-delta up">▲ 12.8%</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card page-load">
+            <div class="kpi-label">P95 Latency</div>
+            <div class="kpi-value">118ms</div>
+            <span class="kpi-delta up">▼ 6.1% faster</span>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="kpi-card page-load">
+            <div class="kpi-label">Open Incidents</div>
+            <div class="kpi-value">2</div>
+            <span class="kpi-delta down">▲ 1 new this hour</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="row g-3 mb-4">
+        <div class="col-lg-7">
+          <div class="chart-card">
+            <h3>Uptime — last 24 hours</h3>
+            <p class="chart-sub">Global checks · % success per hour</p>
+            <div class="chart-box"><canvas id="dashUptime"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-card">
+            <h3>Request volume</h3>
+            <p class="chart-sub">Millions of requests per day</p>
+            <div class="chart-box"><canvas id="dashTraffic"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-lg-7">
+          <div class="chart-card">
+            <h3>Latency percentiles</h3>
+            <p class="chart-sub">p50 · p95 · p99 in milliseconds</p>
+            <div class="chart-box"><canvas id="dashLatency"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-card">
+            <h3>Service load</h3>
+            <p class="chart-sub">Traffic share by service</p>
+            <div class="chart-box"><canvas id="dashServices"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-7">
+          <div class="chart-card">
+            <h3>Regional latency</h3>
+            <p class="chart-sub">Median latency by cloud region</p>
+            <div class="chart-box"><canvas id="dashRegions"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-card">
+            <h3>Recent incidents</h3>
+            <p class="chart-sub">Automatically correlated by Stackly AI</p>
+            <div class="incident-row"><span class="sev critical"></span><b>CPU saturation — checkout service</b><span>2s ago</span></div>
+            <div class="incident-row"><span class="sev warning"></span><b>P95 latency above baseline</b><span>4s ago</span></div>
+            <div class="incident-row"><span class="sev resolved"></span><b>Redis pool exhaustion</b><span>12min ago</span></div>
+            <div class="incident-row"><span class="sev resolved"></span><b>Deploy regression — cart</b><span>1h ago</span></div>
+            <div class="incident-row"><span class="sev resolved"></span><b>DB connection spike — us-east</b><span>3h ago</span></div>
+            <a href="features.html" class="blog-read mt-3 d-inline-flex">See how alerts work <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA band -->
+      <section class="section" style="padding-bottom:90px;">
+        <div class="cta-band">
+          <div>
+            <h2>Like what you see?</h2>
+            <p>This is a live chart demo — connect your own stack in 10 minutes.</p>
+          </div>
+          <a href="404.html" class="btn btn-light btn-lg">Start free trial</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+<!-- newsletter -->
+  <!-- ======= Newsletter ======= -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <h2 class="cta-title">Stay Updated with Stackly</h2>
+        <p class="cta-sub">Get weekly insights on cloud monitoring, incident response, and SRE best practices — straight to your inbox.</p>
+        <div class="cta-actions">
+          <form class="newsletter-form" onsubmit="event.preventDefault(); var em=this.querySelector('input[type=email]'); if(em && em.value.trim() && !/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(em.value.trim())){em.classList.add('is-invalid'); var m=this.querySelector('.email-invalid-msg'); if(!m){m=document.createElement('div');m.className='email-invalid-msg';m.style.cssText='color:#f87171;font-size:0.82rem;margin-top:6px;display:none;';em.parentNode.appendChild(m);} m.textContent='Please enter a valid email (e.g. you@company.com).'; m.style.display='block'; return;} this.querySelector('button').textContent='Subscribed ✓';">
+            <input type="email" class="form-control" placeholder="you@company.com" required />
+            <button type="submit" class="btn btn-primary btn-lg btn-glow">Subscribe</button>
+          </form>
+        </div>
+        <small class="cta-note">No spam, ever. Unsubscribe anytime.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+      <footer class="footer">
+    <div class="container">
+      <div class="row g-4 footer-top">
+        <div class="col-lg-4">
+          <a class="navbar-brand mb-3" href="index.html">
+            <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+          </a>
+          <p class="footer-desc">The all-in-one cloud monitoring and observability platform for modern SaaS teams. Metrics, logs, and traces — beautifully unified.</p>
+                    <div class="socials">
+            <a href="404.html" aria-label="Instagram"><span class="soc soc-ig"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.72 3.72 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07Zm0 1.72c-3.15 0-3.52.01-4.77.07-1.08.05-1.67.23-2.06.38-.52.2-.89.44-1.28.83-.39.39-.63.76-.83 1.28-.15.39-.33.98-.38 2.06-.06 1.25-.07 1.62-.07 4.77s.01 3.52.07 4.77c.05 1.08.23 1.67.38 2.06.2.52.44.89.83 1.28.39.39.76.63 1.28.83.39.15.98.33 2.06.38 1.25.06 1.62.07 4.77.07s3.52-.01 4.77-.07c1.08-.05 1.67-.23 2.06-.38.52-.2.89-.44 1.28-.83.39-.39.63-.76.83-1.28.15-.39.33-.98.38-2.06.06-1.25.07-1.62.07-4.77s-.01-3.52-.07-4.77c-.05-1.08-.23-1.67-.38-2.06-.2-.52-.44-.89-.83-1.28-.39-.39-.76-.63-1.28-.83-.39-.15-.98-.33-2.06-.38-1.25-.06-1.62-.07-4.77-.07Zm0 2.94a5.19 5.19 0 1 1 0 10.37 5.19 5.19 0 0 1 0-10.37Zm0 8.56a3.37 3.37 0 1 0 0-6.74 3.37 3.37 0 0 0 0 6.74Zm6.64-8.77a1.21 1.21 0 1 1-2.42 0 1.21 1.21 0 0 1 2.42 0Z"/></svg></span></a>
+            <a href="404.html" aria-label="Facebook"><span class="soc soc-fb"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></span></a>
+            <a href="404.html" aria-label="YouTube"><span class="soc soc-yt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.55 12 3.55 12 3.55s-7.51 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.51 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></span></a>
+            <a href="404.html" aria-label="Twitter / X"><span class="soc soc-x"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"/></svg></span></a>
+            <a href="404.html" aria-label="LinkedIn"><span class="soc soc-li"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg></span></a>
+            <a href="404.html" aria-label="GitHub"><span class="soc soc-gh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></span></a>
+          </div>
+
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">Cloud Monitoring</a></li>
+            <li><a href="solutions.html">Infrastructure Monitoring</a></li>
+            <li><a href="solutions.html">Application Monitoring</a></li>
+            <li><a href="solutions.html">Network Monitoring</a></li>
+            <li><a href="solutions.html">Server Monitoring</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="404.html">Documentation</a></li>
+            <li><a href="404.html">Blog</a></li>
+            <li><a href="404.html">Tutorials</a></li>
+            <li><a href="404.html">Case Studies</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="404.html">About Us</a></li>
+            <li><a href="404.html">Contact Us</a></li>
+            <li><a href="404.html">Careers</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Stackly. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="404.html">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="404.html">Terms &amp; Conditions</a>
+          <span class="sep">|</span>
+          <a href="404.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

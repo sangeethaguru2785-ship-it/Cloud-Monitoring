@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly pricing — Free plan forever, Starter and Professional for growing teams, Enterprise for mission-critical scale." />
+  <title>Pricing — Stackly Cloud Monitoring</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2 4 5.5v5.6c0 5.1 3.4 9.8 8 10.9 4.6-1.1 8-5.8 8-10.9V5.5L12 2z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- ======= Navbar ======= -->
+  <nav class="navbar navbar-expand-lg fixed-top main-nav" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 nav-cta">
+          <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+          <a href="dashboard.html" class="btn btn-primary btn-sm btn-glow">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= 1. Hero ======= -->
+  <header class="page-hero hero-pricing">
+    <div class="container">
+      <div class="breadcrumb-nav page-load"><a href="index.html">Home</a><span class="sep">/</span><span>Pricing</span></div>
+      <h1 class="page-title page-load">Simple, transparent <span class="grad-text">pricing</span></h1>
+      <p class="page-sub page-load">Start free. Upgrade when you grow. No hidden fees, cancel anytime.</p>
+
+      <div class="billing-toggle page-load">
+        <span id="lblMonthly" class="active-billing">Monthly</span>
+        <label class="switch">
+          <input type="checkbox" id="billingSwitch" />
+          <span class="slider"></span>
+        </label>
+        <span id="lblYearly">Yearly <em class="save-badge">-20%</em></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= 2. Pricing Plans ======= -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 justify-content-center pricing-grid">
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h3>Free</h3>
+            <p class="price-card-sub">For side projects & learning</p>
+            <div class="price">
+              <span class="currency">$</span><span class="amount" data-monthly="0" data-yearly="0">0</span><span class="period">/mo</span>
+            </div>
+            <ul class="price-feats">
+              <li>✓ Up to 5 servers</li>
+              <li>✓ 7-day retention</li>
+              <li>✓ 10 alerts / month</li>
+              <li>✓ Community support</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline-light w-100">Get Started</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h3>Starter</h3>
+            <p class="price-card-sub">For small growing teams</p>
+            <div class="price">
+              <span class="currency">$</span><span class="amount" data-monthly="29" data-yearly="23">29</span><span class="period">/mo</span>
+            </div>
+            <ul class="price-feats">
+              <li>✓ Up to 50 servers</li>
+              <li>✓ 14-day retention</li>
+              <li>✓ 50 alerts / month</li>
+              <li>✓ Standard dashboards</li>
+              <li>✓ Email support</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline-light w-100">Get Started</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card featured">
+            <span class="popular-badge">Most Popular</span>
+            <h3>Professional</h3>
+            <p class="price-card-sub">For growing SaaS teams</p>
+            <div class="price">
+              <span class="currency">$</span><span class="amount" data-monthly="49" data-yearly="39">49</span><span class="period">/mo</span>
+            </div>
+            <ul class="price-feats">
+              <li>✓ Up to 100 servers</li>
+              <li>✓ 30-day retention</li>
+              <li>✓ Unlimited alerts & AI</li>
+              <li>✓ Advanced analytics & reports</li>
+              <li>✓ Slack & PagerDuty</li>
+              <li>✓ Priority support</li>
+            </ul>
+            <a href="404.html" class="btn btn-primary btn-glow w-100">Get Started</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h3>Enterprise</h3>
+            <p class="price-card-sub">For mission-critical scale</p>
+            <div class="price">
+              <span class="currency">$</span><span class="amount" data-monthly="Custom" data-yearly="Custom">Custom</span><span class="period"></span>
+            </div>
+            <ul class="price-feats">
+              <li>✓ Unlimited servers</li>
+              <li>✓ 5-year retention</li>
+              <li>✓ Unlimited everything</li>
+              <li>✓ SSO / SAML & RBAC</li>
+              <li>✓ 99.99% SLA</li>
+              <li>✓ Dedicated CSM</li>
+            </ul>
+            <a href="404.html" class="btn btn-outline-light w-100">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 3. Plan Comparison ======= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Plan Comparison</span>
+        <h2 class="section-title">Every plan, <span class="grad-text">side by side</span></h2>
+        <p class="section-sub">Compare monitoring limits, servers, alerts, analytics, reports, integrations, and support across all plans.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="table-dark-custom">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Starter</th>
+              <th class="featured-col">Professional</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monthly price</td><td><span class="cmp-amount" data-monthly="$0" data-yearly="$0">$0</span></td><td><span class="cmp-amount" data-monthly="$29" data-yearly="$23">$29</span></td><td class="featured-col"><span class="cmp-amount" data-monthly="$49" data-yearly="$39">$49</span></td><td>Custom</td></tr>
+            <tr><td>Monitoring limits</td><td>Real-time basics</td><td>Real-time</td><td class="featured-col">Full + AI anomaly</td><td>Full + custom engine</td></tr>
+            <tr><td>Number of servers</td><td>5</td><td>50</td><td class="featured-col">100</td><td>Unlimited</td></tr>
+            <tr><td>Alerts</td><td>10 / month</td><td>50 / month</td><td class="featured-col">Unlimited + AI</td><td>Unlimited + AI</td></tr>
+            <tr><td>Analytics</td><td>Basic</td><td>Standard</td><td class="featured-col">Advanced</td><td>Advanced + custom</td></tr>
+            <tr><td>Reports</td><td class="no">—</td><td>Weekly</td><td class="featured-col">Automated</td><td>Full + API</td></tr>
+            <tr><td>Integrations</td><td>10</td><td>50</td><td class="featured-col">100+</td><td>All + custom</td></tr>
+            <tr><td>Support</td><td>Community</td><td>Email</td><td class="featured-col">Priority</td><td>Dedicated CSM</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 4. Key Benefits ======= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Key Benefits</span>
+        <h2 class="section-title">Every plan includes <span class="grad-text">the essentials</span></h2>
+        <p class="section-sub">Five benefits you get with Stackly no matter which plan you choose.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center features-grid">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/pr-realtime.webp" alt="Real-time monitoring" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-monitor"></span></div>
+            <h3>Real-time monitoring</h3>
+            <p>Live metrics for every server, container, and service — updated every second.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/pr-alerts.webp" alt="Smart alerts" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-bell"></span></div>
+            <h3>Smart alerts</h3>
+            <p>Noise-free, AI-tuned alerts that only page humans when it truly matters.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/card-analytics.webp" alt="Advanced analytics" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-trace"></span></div>
+            <h3>Advanced analytics</h3>
+            <p>Interactive charts, performance trends, and detailed reports on demand.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/pr-247.webp" alt="24/7 monitoring" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-ai"></span></div>
+            <h3>24/7 monitoring</h3>
+            <p>Synthetic checks from 30+ global regions keep watch around the clock.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/pr-secure.webp" alt="Secure infrastructure" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-shield"></span></div>
+            <h3>Secure infrastructure</h3>
+            <p>SOC 2 Type II, ISO 27001, AES-256 encryption, and region-locked residency.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/pr-dashboards.webp" alt="Custom dashboards" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-log"></span></div>
+            <h3>Custom dashboards</h3>
+            <p>Drag-and-drop, role-based dashboards for every team — shareable in one click.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 5. Enterprise Section ======= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="dash-card">
+            <div class="dash-head">
+              <div class="dash-dots"><i></i><i></i><i></i></div>
+              <span>Stackly.cloud / enterprise</span>
+            </div>
+            <div class="dash-body">
+              <div class="section-head text-center mb-4">
+                <span class="section-tag">Enterprise</span>
+                <h2 class="section-title">Built for <span class="grad-text">mission-critical scale</span></h2>
+                <p class="section-sub">Custom pricing, dedicated support, advanced security, and custom integrations — everything you need to run at enterprise scale.</p>
+              </div>
+
+              <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                  <div class="security-item">
+                    <span class="sec-ico">$</span>
+                    <div><b>Custom pricing</b><p>Volume-based pricing tailored to your scale and data volume.</p></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="security-item">
+                    <span class="sec-ico">✦</span>
+                    <div><b>Dedicated support</b><p>A dedicated customer success manager and 24/7 priority engineering.</p></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="security-item">
+                    <span class="sec-ico">⬢</span>
+                    <div><b>Advanced security</b><p>SSO / SAML, RBAC, private data residency, and custom compliance support.</p></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="security-item">
+                    <span class="sec-ico">▤</span>
+                    <div><b>Custom integrations</b><p>Build bespoke integrations with our open API and dedicated engineering.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <a href="404.html" class="btn btn-primary btn-lg btn-glow">Contact Sales</a>
+                <p class="cta-note mt-3 mb-0">Custom SLA · Volume discounts · SOC 2 & ISO 27001 reports included</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 6. FAQ ======= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Pricing questions, <span class="grad-text">answered</span></h2>
+      </div>
+      <div class="accordion faq-accordion mx-auto" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+              How does pricing work?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Simple and transparent — you pay per plan, not per metric. Every plan includes real-time monitoring, dashboards, and core alerts. Upgrade only when your team grows into more servers or advanced features.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Is there a free trial?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes. The Free plan is free forever for up to 5 servers, and every paid plan comes with a 14-day free trial — no credit card required.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              How do plan upgrades work?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Upgrading is instant and prorated — you're billed the difference from the upgrade date. Your dashboards, alerts, and history carry over automatically.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+              Can I cancel anytime?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Absolutely. Cancel in two clicks from your billing settings — no phone calls, no retention scripts. You keep access until the end of your billing period, and you can export your data anytime.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+              What payment options are available?
+            </button>
+          </h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">We accept all major credit cards, debit cards, and PayPal. Enterprise customers can also pay by invoice (Net 30) with purchase orders and annual prepay discounts.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 7. Final CTA ======= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-panel">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <h2 class="cta-title">Choose the Right Plan for Your Business</h2>
+        <p class="cta-sub">Start free today and upgrade when you grow. Every plan includes real-time monitoring and smart alerts.</p>
+        <div class="cta-actions">
+          <a href="404.html" class="btn btn-light btn-lg">Get Started</a>
+        </div>
+        <small class="cta-note">No credit card required · Free forever plan available</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Newsletter ======= -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <h2 class="cta-title">Stay Updated with Stackly</h2>
+        <p class="cta-sub">Get weekly insights on cloud monitoring, incident response, and SRE best practices — straight to your inbox.</p>
+        <div class="cta-actions">
+          <form class="newsletter-form" onsubmit="event.preventDefault(); var em=this.querySelector('input[type=email]'); if(em && em.value.trim() && !/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(em.value.trim())){em.classList.add('is-invalid'); var m=this.querySelector('.email-invalid-msg'); if(!m){m=document.createElement('div');m.className='email-invalid-msg';m.style.cssText='color:#f87171;font-size:0.82rem;margin-top:6px;display:none;';em.parentNode.appendChild(m);} m.textContent='Please enter a valid email (e.g. you@company.com).'; m.style.display='block'; return;} this.querySelector('button').textContent='Subscribed ✓';">
+            <input type="email" class="form-control" placeholder="you@company.com" required />
+            <button type="submit" class="btn btn-primary btn-lg btn-glow">Subscribe</button>
+          </form>
+        </div>
+        <small class="cta-note">No spam, ever. Unsubscribe anytime.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+      <footer class="footer">
+    <div class="container">
+      <div class="row g-4 footer-top">
+        <div class="col-lg-4">
+          <a class="navbar-brand mb-3" href="index.html">
+            <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+          </a>
+          <p class="footer-desc">The all-in-one cloud monitoring and observability platform for modern SaaS teams. Metrics, logs, and traces — beautifully unified.</p>
+                    <div class="socials">
+            <a href="404.html" aria-label="Instagram"><span class="soc soc-ig"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.72 3.72 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07Zm0 1.72c-3.15 0-3.52.01-4.77.07-1.08.05-1.67.23-2.06.38-.52.2-.89.44-1.28.83-.39.39-.63.76-.83 1.28-.15.39-.33.98-.38 2.06-.06 1.25-.07 1.62-.07 4.77s.01 3.52.07 4.77c.05 1.08.23 1.67.38 2.06.2.52.44.89.83 1.28.39.39.76.63 1.28.83.39.15.98.33 2.06.38 1.25.06 1.62.07 4.77.07s3.52-.01 4.77-.07c1.08-.05 1.67-.23 2.06-.38.52-.2.89-.44 1.28-.83.39-.39.63-.76.83-1.28.15-.39.33-.98.38-2.06.06-1.25.07-1.62.07-4.77s-.01-3.52-.07-4.77c-.05-1.08-.23-1.67-.38-2.06-.2-.52-.44-.89-.83-1.28-.39-.39-.76-.63-1.28-.83-.39-.15-.98-.33-2.06-.38-1.25-.06-1.62-.07-4.77-.07Zm0 2.94a5.19 5.19 0 1 1 0 10.37 5.19 5.19 0 0 1 0-10.37Zm0 8.56a3.37 3.37 0 1 0 0-6.74 3.37 3.37 0 0 0 0 6.74Zm6.64-8.77a1.21 1.21 0 1 1-2.42 0 1.21 1.21 0 0 1 2.42 0Z"/></svg></span></a>
+            <a href="404.html" aria-label="Facebook"><span class="soc soc-fb"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></span></a>
+            <a href="404.html" aria-label="YouTube"><span class="soc soc-yt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.55 12 3.55 12 3.55s-7.51 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.51 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></span></a>
+            <a href="404.html" aria-label="Twitter / X"><span class="soc soc-x"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"/></svg></span></a>
+            <a href="404.html" aria-label="LinkedIn"><span class="soc soc-li"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg></span></a>
+            <a href="404.html" aria-label="GitHub"><span class="soc soc-gh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></span></a>
+          </div>
+
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">Cloud Monitoring</a></li>
+            <li><a href="solutions.html">Infrastructure Monitoring</a></li>
+            <li><a href="solutions.html">Application Monitoring</a></li>
+            <li><a href="solutions.html">Network Monitoring</a></li>
+            <li><a href="solutions.html">Server Monitoring</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="404.html">Documentation</a></li>
+            <li><a href="404.html">Blog</a></li>
+            <li><a href="404.html">Tutorials</a></li>
+            <li><a href="404.html">Case Studies</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="404.html">About Us</a></li>
+            <li><a href="404.html">Contact Us</a></li>
+            <li><a href="404.html">Careers</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Stackly. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="404.html">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="404.html">Terms &amp; Conditions</a>
+          <span class="sep">|</span>
+          <a href="404.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

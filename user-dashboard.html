@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly user dashboard — monitor your servers, cloud, application, network, and performance." />
+  <title>User Dashboard — Stackly Cloud Monitoring</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2 4 5.5v5.6c0 5.1 3.4 9.8 8 10.9 4.6-1.1 8-5.8 8-10.9V5.5L12 2z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- ======= Sidebar ======= -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="sidebar-brand">
+      <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+      <div>
+        <small>My Workspace</small>
+      </div>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><button class="sidebar-link active" data-section="overview"><span class="sidebar-ico"><span class="fi fi-home"></span></span>Dashboard Overview</button></li>
+      <li><button class="sidebar-link" data-section="servers"><span class="sidebar-ico"><span class="fi fi-server"></span></span>My Servers</button></li>
+      <li><button class="sidebar-link" data-section="cloud"><span class="sidebar-ico"><span class="fi fi-cloud"></span></span>Cloud Monitoring</button></li>
+      <li><button class="sidebar-link" data-section="app"><span class="sidebar-ico"><span class="fi fi-app"></span></span>Application Monitoring</button></li>
+      <li><button class="sidebar-link" data-section="network"><span class="sidebar-ico"><span class="fi fi-net"></span></span>Network Monitoring</button></li>
+      <li><button class="sidebar-link" data-section="performance"><span class="sidebar-ico"><span class="fi fi-chart"></span></span>Performance Analytics</button></li>
+      <li><button class="sidebar-link" data-section="alerts"><span class="sidebar-ico"><span class="fi fi-alert"></span></span>Active Alerts</button></li>
+      <li><button class="sidebar-link" data-section="incidents"><span class="sidebar-ico"><span class="fi fi-bell"></span></span>Incidents</button></li>
+      <li><button class="sidebar-link" data-section="reports"><span class="sidebar-ico"><span class="fi fi-doc"></span></span>Reports</button></li>
+      <li><button class="sidebar-link" data-section="profile"><span class="sidebar-ico"><span class="fi fi-user"></span></span>Profile</button></li>
+      <li><button class="sidebar-link" data-section="settings"><span class="sidebar-ico"><span class="fi fi-gear"></span></span>Settings</button></li>
+    </ul>
+
+    <div class="sidebar-foot">
+      <div class="sidebar-user">
+        <div class="dash-avatar" id="sidebarAvatar" style="background:#22d3ee;">J</div>
+        <div>
+          <b id="sidebarUserName">Jamie Doe</b>
+          <small id="sidebarUserEmail">jamie@stackly.cloud</small>
+        </div>
+      </div>
+      <a href="login.html" class="sidebar-link"><span class="sidebar-ico"><span class="fi fi-power"></span></span>Logout</a>
+    </div>
+  </aside>
+
+  <div class="dash-backdrop" id="dashBackdrop"></div>
+
+  <!-- ======= Shell ======= -->
+  <div class="dash-shell">
+    <div class="dash-bar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-ghost btn-sm dash-menu-btn" id="dashMenuBtn" type="button" aria-label="Toggle menu">
+          <span class="fi fi-log"></span>
+        </button>
+        <div>
+          <h1>User Dashboard</h1>
+          <p>Welcome back, Jamie &middot; Workspace: Stackly HQ</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <span class="dash-time"><span class="live-dot"></span> LIVE</span>
+        <span class="role-badge user"><span class="fi fi-user"></span> USER</span>
+        <div class="auth-user-chip d-none d-md-flex">
+          <div class="dash-avatar" id="topbarAvatar" style="background:#22d3ee;">J</div>
+          <div>
+            <b id="topbarUserName">Jamie Doe</b>
+            <small id="topbarUserEmail">jamie@stackly.cloud</small>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-ghost btn-sm">Sign out</a>
+      </div>
+    </div>
+
+    <!-- ===== Overview ===== -->
+    <section class="dash-section active" id="overview">
+      <h2>Dashboard Overview</h2>
+      <p class="section-sub">System health and live utilization of your services.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md-4 col-xl-2">
+          <div class="kpi-card">
+            <div class="kpi-label">My Services <span>active</span></div>
+            <div class="kpi-value">12</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2">
+          <div class="kpi-card">
+            <div class="kpi-label">My Uptime <span>30d</span></div>
+            <div class="kpi-value">99.98%</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2">
+          <div class="kpi-card">
+            <div class="kpi-label">Avg Latency <span>p95</span></div>
+            <div class="kpi-value">42<span style="font-size:0.9rem;">ms</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2">
+          <div class="kpi-card">
+            <div class="kpi-label">Open Alerts <span>now</span></div>
+            <div class="kpi-value">1</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2">
+          <div class="kpi-card">
+            <div class="kpi-label">Data Processed <span>today</span></div>
+            <div class="kpi-value">4.2<span style="font-size:0.9rem;">GB</span></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2">
+          <div class="kpi-card">
+            <div class="kpi-label">Costs (MTD) <span>estimate</span></div>
+            <div class="kpi-value">$1,240</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-md-6 col-xl-4">
+          <div class="monitor-card">
+            <div class="monitor-head">
+              <span class="m-ico"><span class="fi fi-cpu"></span></span>
+              <div><b>CPU Usage</b><span>Average across cores</span></div>
+            </div>
+            <div class="monitor-value">47%</div>
+            <div class="monitor-bar"><i data-value="47" style="background:linear-gradient(90deg,#6366f1,#8b5cf6);"></i></div>
+            <div class="monitor-foot"><span class="label">8 cores &middot; 32 GB</span><b>Normal</b></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="monitor-card">
+            <div class="monitor-head">
+              <span class="m-ico"><span class="fi fi-mem"></span></span>
+              <div><b>Memory Usage</b><span>RAM utilization</span></div>
+            </div>
+            <div class="monitor-value">62%</div>
+            <div class="monitor-bar"><i data-value="62" style="background:linear-gradient(90deg,#22d3ee,#2dd4bf);"></i></div>
+            <div class="monitor-foot"><span class="label">20 / 32 GB</span><b>Normal</b></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="monitor-card">
+            <div class="monitor-head">
+              <span class="m-ico"><span class="fi fi-disk"></span></span>
+              <div><b>Disk Usage</b><span>Persistent storage</span></div>
+            </div>
+            <div class="monitor-value">74%</div>
+            <div class="monitor-bar"><i data-value="74" style="background:linear-gradient(90deg,#fbbf24,#f59e0b);"></i></div>
+            <div class="monitor-foot"><span class="label">592 / 800 GB</span><b style="color:var(--amber);">Watch</b></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="monitor-card">
+            <div class="monitor-head">
+              <span class="m-ico"><span class="fi fi-traffic"></span></span>
+              <div><b>Network Traffic</b><span>Throughput this hour</span></div>
+            </div>
+            <div class="monitor-value">3.2 <span style="font-size:1rem;">Gb/s</span></div>
+            <div class="monitor-bar"><i data-value="68" style="background:linear-gradient(90deg,#22d3ee,#6366f1);"></i></div>
+            <div class="monitor-foot"><span class="label">Ingress 1.4 &middot; Egress 1.8</span><b>Normal</b></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="monitor-card">
+            <div class="monitor-head">
+              <span class="m-ico"><span class="fi fi-health"></span></span>
+              <div><b>Server Uptime</b><span>Last 30 days</span></div>
+            </div>
+            <div class="monitor-value">99.98%</div>
+            <div class="monitor-bar"><i data-value="100" style="background:linear-gradient(90deg,#2dd4bf,#22d3ee);"></i></div>
+            <div class="monitor-foot"><span class="label">4 servers monitored</span><b>Excellent</b></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="monitor-card">
+            <div class="monitor-head">
+              <span class="m-ico"><span class="fi fi-shield"></span></span>
+              <div><b>System Health</b><span>Aggregated health score</span></div>
+            </div>
+            <div class="monitor-value">92%</div>
+            <div class="monitor-bar"><i data-value="92" style="background:linear-gradient(90deg,#34d399,#22d3ee);"></i></div>
+            <div class="monitor-foot"><span class="label">All systems operational</span><b>Healthy</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h3>Recent Activity</h3>
+            <div class="chart-sub">Latest events on your services</div>
+            <div class="trace-list">
+              <div class="trace-row ok"><span class="trace-dot"></span><b>checkout-api health check passed</b><span class="trace-time">2 min ago</span></div>
+              <div class="trace-row warn"><span class="trace-dot"></span><b>High latency on notifications</b><span class="trace-time">12 min ago</span></div>
+              <div class="trace-row ok"><span class="trace-dot"></span><b>auth-service deployed v2.4.1</b><span class="trace-time">1 hr ago</span></div>
+              <div class="trace-row ok"><span class="trace-dot"></span><b>Weekly report generated</b><span class="trace-time">Yesterday</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h3>Quick Actions</h3>
+            <div class="chart-sub">Common tasks</div>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#cloud" class="btn btn-primary btn-sm">Cloud monitoring</a>
+              <a href="#network" class="btn btn-primary btn-sm">Network monitoring</a>
+              <a href="#alerts" class="btn btn-primary btn-sm">Review alerts</a>
+              <a href="#reports" class="btn btn-ghost btn-sm">View reports</a>
+              <a href="solutions.html" class="btn btn-ghost btn-sm">Add service</a>
+            </div>
+            <div class="report-item" style="margin-top:22px;">
+              <span class="rp-ico"><span class="fi fi-ai"></span></span>
+              <div><b>Insight: notifications P95 up 22%</b><small>Check network section for details</small></div>
+              <span class="rp-meta">AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== My Servers ===== -->
+    <section class="dash-section" id="servers">
+      <h2>My Servers</h2>
+      <p class="section-sub">All servers assigned to your workspace.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-4">
+          <div class="kpi-card">
+            <div class="kpi-label">Total Servers</div>
+            <div class="kpi-value">12</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <div class="kpi-card">
+            <div class="kpi-label">Healthy</div>
+            <div class="kpi-value">11</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <div class="kpi-card">
+            <div class="kpi-label">Degraded</div>
+            <div class="kpi-value">1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-lg-12">
+          <div class="chart-card">
+            <h3>Fleet Uptime</h3>
+            <div class="chart-sub">My servers &middot; last 24 hours</div>
+            <div class="chart-box"><canvas id="dashUptime"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card table-card">
+        <table class="table-dark-custom">
+          <thead>
+            <tr>
+              <th>Server</th>
+              <th>Type</th>
+              <th>Region</th>
+              <th>CPU</th>
+              <th>Memory</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>app-01</td>
+              <td>Application</td>
+              <td>us-east</td>
+              <td>41%</td>
+              <td>58%</td>
+              <td class="yes">Healthy</td>
+              <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+            </tr>
+            <tr>
+              <td>app-02</td>
+              <td>Application</td>
+              <td>us-east</td>
+              <td>36%</td>
+              <td>49%</td>
+              <td class="yes">Healthy</td>
+              <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+            </tr>
+            <tr>
+              <td>db-01</td>
+              <td>Database</td>
+              <td>eu-west</td>
+              <td>63%</td>
+              <td>72%</td>
+              <td class="no">Degraded</td>
+              <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+            </tr>
+            <tr>
+              <td>cache-01</td>
+              <td>Cache</td>
+              <td>us-west</td>
+              <td>29%</td>
+              <td>44%</td>
+              <td class="yes">Healthy</td>
+              <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+            </tr>
+            <tr>
+              <td>worker-01</td>
+              <td>Worker</td>
+              <td>ap-south</td>
+              <td>52%</td>
+              <td>57%</td>
+              <td class="yes">Healthy</td>
+              <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Cloud Monitoring ===== -->
+    <section class="dash-section" id="cloud">
+      <h2>Cloud Monitoring</h2>
+      <p class="section-sub">Your cloud footprint across providers and regions.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h3>Cloud Resource Mix</h3>
+            <div class="chart-sub">Distribution across your cloud services</div>
+            <div class="chart-box" style="height:300px;"><canvas id="dashServices"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h3>Regional Latency</h3>
+            <div class="chart-sub">Average response time by region</div>
+            <div class="chart-box"><canvas id="dashRegions"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Cloud Providers</h3>
+        <div class="chart-sub">Connected accounts</div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>Amazon Web Services</b>
+          <span>3 accounts &middot; healthy</span>
+        </div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>Google Cloud Platform</b>
+          <span>2 accounts &middot; healthy</span>
+        </div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>Microsoft Azure</b>
+          <span>1 account &middot; healthy</span>
+        </div>
+        <div class="incident-row">
+          <span class="sev warning"></span>
+          <b>Kubernetes clusters</b>
+          <span>4 clusters &middot; 1 node draining</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Application Monitoring ===== -->
+    <section class="dash-section" id="app">
+      <h2>Application Monitoring</h2>
+      <p class="section-sub">Live resource utilization for your applications.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-lg-12">
+          <div class="chart-card">
+            <h3>Live Resource Utilization</h3>
+            <div class="chart-sub">CPU / Memory / Network &middot; real-time feed</div>
+            <div class="chart-box"><canvas id="realtimeChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Application Endpoints</h3>
+        <div class="chart-sub">Health of your key endpoints</div>
+        <div class="trace-list">
+          <div class="trace-row ok"><span class="trace-dot"></span><b>GET /api/v1/checkout</b><span class="trace-time">p95 28ms &middot; 99.99%</span></div>
+          <div class="trace-row ok"><span class="trace-dot"></span><b>POST /api/v1/auth/login</b><span class="trace-time">p95 18ms &middot; 100%</span></div>
+          <div class="trace-row warn"><span class="trace-dot"></span><b>POST /api/v1/notifications</b><span class="trace-time">p95 64ms &middot; 99.2%</span></div>
+          <div class="trace-row ok"><span class="trace-dot"></span><b>GET /api/v1/products</b><span class="trace-time">p95 14ms &middot; 100%</span></div>
+          <div class="trace-row ok"><span class="trace-dot"></span><b>GET /api/v1/search</b><span class="trace-time">p95 22ms &middot; 99.99%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Network Monitoring ===== -->
+    <section class="dash-section" id="network">
+      <h2>Network Monitoring</h2>
+      <p class="section-sub">Latency, traffic, and network component health.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-lg-7">
+          <div class="chart-card">
+            <h3>Latency Percentiles</h3>
+            <div class="chart-sub">p50 / p95 / p99 &middot; last 24 hours</div>
+            <div class="chart-box"><canvas id="dashLatency"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-card">
+            <h3>Request Volume</h3>
+            <div class="chart-sub">This week</div>
+            <div class="chart-box"><canvas id="dashTraffic"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Network Components</h3>
+        <div class="chart-sub">Status of your network edge</div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>DNS resolution</b>
+          <span>12ms &middot; operational</span>
+        </div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>CDN edge</b>
+          <span>11ms &middot; operational</span>
+        </div>
+        <div class="incident-row">
+          <span class="sev warning"></span>
+          <b>Load balancer</b>
+          <span>68ms &middot; elevated latency</span>
+        </div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>WAF / firewall</b>
+          <span>Operational</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Performance Analytics ===== -->
+    <section class="dash-section" id="performance">
+      <h2>Performance Analytics</h2>
+      <p class="section-sub">Trends in traffic and latency for your services.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-lg-12">
+          <div class="chart-card">
+            <h3>Performance Overview</h3>
+            <div class="chart-sub">Requests vs P95 latency &middot; last 8 weeks</div>
+            <div class="chart-box"><canvas id="analyticsChart"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card table-card">
+        <table class="table-dark-custom">
+          <thead>
+            <tr>
+              <th>Endpoint</th>
+              <th>Requests (30d)</th>
+              <th>P50</th>
+              <th>P95</th>
+              <th>Error Rate</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>/api/v1/checkout</td>
+              <td>2.4M</td>
+              <td>18ms</td>
+              <td>28ms</td>
+              <td class="yes">0.02%</td>
+              <td class="yes">Stable</td>
+            </tr>
+            <tr>
+              <td>/api/v1/auth/login</td>
+              <td>1.9M</td>
+              <td>11ms</td>
+              <td>18ms</td>
+              <td class="yes">0.01%</td>
+              <td class="yes">Improving</td>
+            </tr>
+            <tr>
+              <td>/api/v1/notifications</td>
+              <td>860K</td>
+              <td>44ms</td>
+              <td>64ms</td>
+              <td class="no">0.9%</td>
+              <td class="no">Degrading</td>
+            </tr>
+            <tr>
+              <td>/api/v1/products</td>
+              <td>3.1M</td>
+              <td>9ms</td>
+              <td>14ms</td>
+              <td class="yes">0.01%</td>
+              <td class="yes">Stable</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Active Alerts ===== -->
+    <section class="dash-section" id="alerts">
+      <h2>Active Alerts</h2>
+      <p class="section-sub">Alerts currently assigned to you.</p>
+
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-4">
+          <div class="kpi-card">
+            <div class="kpi-label">Critical</div>
+            <div class="kpi-value" style="color:var(--rose);">1</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <div class="kpi-card">
+            <div class="kpi-label">Warning</div>
+            <div class="kpi-value" style="color:var(--amber);">2</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <div class="kpi-card">
+            <div class="kpi-label">Resolved (30d)</div>
+            <div class="kpi-value" style="color:var(--teal);">9</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Open Alerts</h3>
+        <div class="chart-sub">Acknowledge or resolve to clear notifications</div>
+        <div class="incident-row">
+          <span class="sev critical"></span>
+          <b>cdn-edge certificate expiring</b>
+          <span>Critical &middot; 3 days ago</span>
+          <button class="btn btn-ghost btn-sm">Acknowledge</button>
+        </div>
+        <div class="incident-row">
+          <span class="sev warning"></span>
+          <b>High latency on notifications</b>
+          <span>Warning &middot; 12 min ago</span>
+          <button class="btn btn-ghost btn-sm">Acknowledge</button>
+        </div>
+        <div class="incident-row">
+          <span class="sev warning"></span>
+          <b>db-01 disk usage above 85%</b>
+          <span>Warning &middot; 1 day ago</span>
+          <button class="btn btn-ghost btn-sm">Acknowledge</button>
+        </div>
+        <div class="section-cta">
+          <button class="btn btn-primary btn-sm btn-glow">Acknowledge all</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Incidents ===== -->
+    <section class="dash-section" id="incidents">
+      <h2>Incidents</h2>
+      <p class="section-sub">Recent incidents and their resolution status.</p>
+
+      <div class="chart-card">
+        <h3>Incident History</h3>
+        <div class="chart-sub">Last 30 days</div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>checkout-api recovered after brief outage</b>
+          <span>Resolved &middot; 1 day ago</span>
+          <button class="btn btn-ghost btn-sm">Post-mortem</button>
+        </div>
+        <div class="incident-row">
+          <span class="sev warning"></span>
+          <b>auth-service latency spike</b>
+          <span>Monitoring &middot; 3 days ago</span>
+          <button class="btn btn-ghost btn-sm">Post-mortem</button>
+        </div>
+        <div class="incident-row">
+          <span class="sev critical"></span>
+          <b>cdn-edge certificate expiring</b>
+          <span>Open &middot; 3 days ago</span>
+          <button class="btn btn-ghost btn-sm">Post-mortem</button>
+        </div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>Database failover drill</b>
+          <span>Resolved &middot; last week</span>
+          <button class="btn btn-ghost btn-sm">Post-mortem</button>
+        </div>
+        <div class="incident-row">
+          <span class="sev resolved"></span>
+          <b>Payment gateway degredation</b>
+          <span>Resolved &middot; 2 weeks ago</span>
+          <button class="btn btn-ghost btn-sm">Post-mortem</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reports ===== -->
+    <section class="dash-section" id="reports">
+      <h2>Reports</h2>
+      <p class="section-sub">Download reports generated for your services.</p>
+
+      <div class="chart-card">
+        <h3>My Reports</h3>
+        <div class="chart-sub">Generated on demand or on schedule</div>
+        <div class="report-item">
+          <span class="rp-ico"><span class="fi fi-doc"></span></span>
+          <div><b>Weekly reliability report</b><small>Uptime, latency, and incidents &middot; Aug 10, 2026</small></div>
+          <span class="rp-meta"><a href="#" class="text-decoration-none fw-semibold">Download</a></span>
+        </div>
+        <div class="report-item">
+          <span class="rp-ico"><span class="fi fi-doc"></span></span>
+          <div><b>Monthly cost analysis</b><small>Spend by service &middot; Aug 1, 2026</small></div>
+          <span class="rp-meta"><a href="#" class="text-decoration-none fw-semibold">Download</a></span>
+        </div>
+        <div class="report-item">
+          <span class="rp-ico"><span class="fi fi-doc"></span></span>
+          <div><b>Incident post-mortem &mdash; cdn-edge</b><small>Root cause analysis &middot; Jul 28, 2026</small></div>
+          <span class="rp-meta"><a href="#" class="text-decoration-none fw-semibold">Download</a></span>
+        </div>
+        <div class="report-item">
+          <span class="rp-ico"><span class="fi fi-doc"></span></span>
+          <div><b>Capacity forecast</b><small>Growth projections &middot; Jul 15, 2026</small></div>
+          <span class="rp-meta"><a href="#" class="text-decoration-none fw-semibold">Download</a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Profile ===== -->
+    <section class="dash-section" id="profile">
+      <h2>Profile</h2>
+      <p class="section-sub">Your personal account details.</p>
+
+      <div class="row g-3">
+        <div class="col-lg-5">
+          <div class="chart-card">
+            <h3>My Profile</h3>
+            <div class="chart-sub">Account summary</div>
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <img src="https://randomuser.me/api/portraits/men/76.jpg" class="rounded-circle" width="72" height="72" alt="Jamie Doe" />
+              <div>
+                <b class="d-block fs-5">Jamie Doe</b>
+                <span class="role-badge user"><span class="fi fi-user"></span> USER</span>
+              </div>
+            </div>
+            <div class="incident-row"><b>Email</b><span>jamie@stackly.cloud</span></div>
+            <div class="incident-row"><b>Workspace</b><span>Stackly HQ</span></div>
+            <div class="incident-row"><b>Member since</b><span>Mar 2025</span></div>
+            <div class="incident-row"><b>Notifications</b><span>Email &amp; Slack</span></div>
+            <div class="section-cta">
+              <button class="btn btn-primary btn-sm btn-glow">Edit profile</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="kpi-card">
+                <div class="kpi-label">Services</div>
+                <div class="kpi-value">12</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kpi-card">
+                <div class="kpi-label">Open Alerts</div>
+                <div class="kpi-value">1</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kpi-card">
+                <div class="kpi-label">Reports</div>
+                <div class="kpi-value">18</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kpi-card">
+                <div class="kpi-label">Avg Response</div>
+                <div class="kpi-value">14m</div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-card mt-3">
+            <h3>Recent Badges</h3>
+            <div class="chart-sub">Achievements unlocked</div>
+            <div class="incident-row">
+              <span class="sev resolved"></span>
+              <b>30-day perfect uptime</b>
+              <span>Aug 2026</span>
+            </div>
+            <div class="incident-row">
+              <span class="sev resolved"></span>
+              <b>First incident resolved</b>
+              <span>May 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Settings ===== -->
+    <section class="dash-section" id="settings">
+      <h2>Settings</h2>
+      <p class="section-sub">Personal preferences and account security.</p>
+
+      <div class="row g-3">
+        <div class="col-lg-7">
+          <div class="chart-card">
+            <h3>Account Settings</h3>
+            <div class="chart-sub">Update your personal information</div>
+            <div class="mb-3">
+              <label class="form-label" for="pfName">Full name</label>
+              <input type="text" class="form-control" id="pfName" value="Jamie Doe" data-validate="name" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="pfEmail">Email address</label>
+              <input type="email" class="form-control" id="pfEmail" value="jamie@stackly.cloud" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="pfRegion">Preferred region</label>
+              <select class="form-select" id="pfRegion">
+                <option selected>us-east</option>
+                <option>eu-west</option>
+                <option>ap-south</option>
+              </select>
+            </div>
+            <div class="form-check form-switch d-flex justify-content-between align-items-center py-1">
+              <label class="form-check-label" for="pfEmailNotif">Email alert notifications</label>
+              <input class="form-check-input" type="checkbox" id="pfEmailNotif" checked />
+            </div>
+            <div class="form-check form-switch d-flex justify-content-between align-items-center py-1">
+              <label class="form-check-label" for="pfSlackNotif">Slack notifications</label>
+              <input class="form-check-input" type="checkbox" id="pfSlackNotif" checked />
+            </div>
+            <div class="form-check form-switch d-flex justify-content-between align-items-center py-1">
+              <label class="form-check-label" for="pfDigest">Weekly digest report</label>
+              <input class="form-check-input" type="checkbox" id="pfDigest" />
+            </div>
+            <div class="section-cta">
+              <button class="btn btn-primary btn-glow">Save changes</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-card mb-3">
+            <h3>Change Password</h3>
+            <div class="chart-sub">Use at least 8 characters</div>
+            <div class="mb-3">
+              <label class="form-label" for="pfCurrent">Current password</label>
+              <input type="password" class="form-control" id="pfCurrent" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="pfNew">New password</label>
+              <input type="password" class="form-control" id="pfNew" />
+            </div>
+            <button class="btn btn-ghost btn-sm">Update password</button>
+          </div>
+          <div class="chart-card">
+            <h3>Danger Zone</h3>
+            <div class="chart-sub">Irreversible actions</div>
+            <div class="d-flex flex-column gap-2">
+              <button class="btn btn-ghost btn-sm">Close workspace account</button>
+              <button class="btn btn-ghost btn-sm" style="color:var(--rose);border-color:rgba(244,63,94,0.4);">Delete my account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly features — real-time monitoring, smart alerts, performance analytics, uptime, security, and custom dashboards." />
+  <title>Features — Stackly Cloud Monitoring</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2 4 5.5v5.6c0 5.1 3.4 9.8 8 10.9 4.6-1.1 8-5.8 8-10.9V5.5L12 2z'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+</head>
+<body>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- ======= Navbar ======= -->
+  <nav class="navbar navbar-expand-lg fixed-top main-nav" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+          <li class="nav-item"><a class="nav-link active" href="features.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 nav-cta">
+          <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+          <a href="dashboard.html" class="btn btn-primary btn-sm btn-glow">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= 1. Hero ======= -->
+  <header class="page-hero hero-features">
+    <div class="container">
+      <div class="breadcrumb-nav page-load"><a href="index.html">Home</a><span class="sep">/</span><span>Features</span></div>
+      <h1 class="page-title page-load">Powerful features for <span class="grad-text">smarter cloud monitoring</span></h1>
+      <p class="page-sub page-load">Everything your team needs to observe, alert, and optimize — real-time monitoring, smart alerts, deep analytics, and custom dashboards in one platform.</p>
+
+    </div>
+  </header>
+
+  <!-- ======= 2. Feature Overview ======= -->
+  <section class="section overview" id="overview">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Feature Overview</span>
+        <h2 class="section-title">Every feature, <span class="grad-text">built to work together</span></h2>
+        <p class="section-sub">Six core capabilities that give you complete observability — from a single, unified platform.</p>
+      </div>
+
+      <div class="row g-4 features-grid">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-realtime.webp" alt="Real-time monitoring" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-monitor"></span></div>
+            <h3>Real-Time Monitoring</h3>
+            <p>Live metrics for every server, container, and service — updated every second.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-alerts.webp" alt="Smart alerts" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-bell"></span></div>
+            <h3>Smart Alerts</h3>
+            <p>Noise-free, AI-tuned alerts that only page humans when it truly matters.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/card-analytics.webp" alt="Performance analytics" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-trace"></span></div>
+            <h3>Performance Analytics</h3>
+            <p>Interactive charts and detailed reports that turn raw data into decisions.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-uptime.webp" alt="Uptime monitoring" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-ai"></span></div>
+            <h3>Uptime Monitoring</h3>
+            <p>Synthetic checks from 30+ regions that catch downtime before users do.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-security.webp" alt="Security monitoring" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-shield"></span></div>
+            <h3>Security Monitoring</h3>
+            <p>Threat detection and activity monitoring that keep your cloud locked down.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-dashboards.webp" alt="Custom dashboards" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-log"></span></div>
+            <h3>Custom Dashboards</h3>
+            <p>Drag-and-drop widgets and personalized views for every team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 3. Real-Time Monitoring ======= -->
+  <section class="section" id="real-time-monitoring">
+    <div class="container">
+      <div class="feature-row row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="section-tag">Real-Time Monitoring</span>
+          <h3>Live server metrics, <span class="grad-text">second by second</span></h3>
+          <p>Collect thousands of metrics per host with a lightweight agent and see your entire fleet update in real time.</p>
+          <ul class="check-list">
+            <li><span class="check-ico">✓</span> Live server metrics for every host</li>
+            <li><span class="check-ico">✓</span> CPU, memory & disk usage tracking</li>
+            <li><span class="check-ico">✓</span> Network performance monitoring</li>
+          </ul>
+          <div class="mini-stats">
+            <div><strong>0.5s</strong><span>pipeline delay</span></div>
+            <div><strong>10k+</strong><span>metrics / host</span></div>
+            <div><strong>100%</strong><span>coverage</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="overview-visual" data-tilt>
+            <div class="dash-card">
+              <div class="dash-head">
+                <div class="dash-dots"><i></i><i></i><i></i></div>
+                <span>Stackly.cloud / server-metrics</span>
+              </div>
+              <div class="dash-body">
+                <div class="dash-row">
+                  <div class="dash-stat">
+                    <span class="stat-label">CPU</span>
+                    <span class="stat-value">38%</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Memory</span>
+                    <span class="stat-value">62%</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Disk</span>
+                    <span class="stat-value">48%</span>
+                  </div>
+                </div>
+                <div class="dash-bars">
+                  <span class="bar bar-1"></span>
+                  <span class="bar bar-2"></span>
+                  <span class="bar bar-3"></span>
+                  <span class="bar bar-4"></span>
+                  <span class="bar bar-5"></span>
+                  <span class="bar bar-6"></span>
+                  <span class="bar bar-7"></span>
+                  <span class="bar bar-8"></span>
+                </div>
+                <div class="ov-services">
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>web-node-01</b><span class="trace-time">healthy</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>web-node-02</b><span class="trace-time">healthy</span></div>
+                  <div class="trace-row warn"><span class="trace-dot"></span><b>db-primary</b><span class="trace-time">high disk</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>cache-cluster</b><span class="trace-time">healthy</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 4. Smart Alerts ======= -->
+  <section class="section" id="smart-alerts">
+    <div class="container">
+      <div class="feature-row row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2">
+          <span class="section-tag">Smart Alerts</span>
+          <h3>Alerts that <span class="grad-text">never cry wolf</span></h3>
+          <p>Instant notifications with machine-learned baselines, custom alert rules, and critical issue detection that routes to the right team.</p>
+          <ul class="check-list">
+            <li><span class="check-ico">✓</span> Instant notifications in under 1 second</li>
+            <li><span class="check-ico">✓</span> Custom alert rules & thresholds</li>
+            <li><span class="check-ico">✓</span> Critical issue detection & escalation</li>
+          </ul>
+          <div class="mini-stats">
+            <div><strong>-87%</strong><span>alert noise</span></div>
+            <div><strong>9min</strong><span>MTTR</span></div>
+            <div><strong>AI</strong><span>root cause</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="overview-visual" data-tilt>
+            <div class="live-panel">
+              <h3 class="panel-title"><span class="live-dot"></span> Live alert stream</h3>
+              <div class="incident-row">
+                <span class="sev critical"></span>
+                <b>CPU saturation — checkout service</b>
+                <span class="alert-badge critical">CRITICAL</span>
+              </div>
+              <div class="incident-row">
+                <span class="sev warning"></span>
+                <b>P95 latency above baseline</b>
+                <span class="alert-badge warning">WARNING</span>
+              </div>
+              <div class="incident-row">
+                <span class="sev warning"></span>
+                <b>Disk usage at 82% on db-primary</b>
+                <span class="alert-badge warning">WARNING</span>
+              </div>
+              <div class="incident-row">
+                <span class="sev resolved"></span>
+                <b>Redis pool exhaustion — auto-resolved</b>
+                <span class="alert-badge info">RESOLVED</span>
+              </div>
+              <div class="incident-row">
+                <span class="sev resolved"></span>
+                <b>Deploy regression — cart (rolled back)</b>
+                <span class="alert-badge info">RESOLVED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 5. Performance Analytics ======= -->
+  <section class="section" id="performance-analytics">
+    <div class="container">
+      <div class="feature-row row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="section-tag">Performance Analytics</span>
+          <h3>Interactive charts, <span class="grad-text">deep insights</span></h3>
+          <p>Explore interactive charts of resource usage, spot performance trends, and generate detailed reports — all without leaving your dashboard.</p>
+          <ul class="check-list">
+            <li><span class="check-ico">✓</span> Interactive charts & dashboards</li>
+            <li><span class="check-ico">✓</span> Resource usage by service & region</li>
+            <li><span class="check-ico">✓</span> Performance trends & forecasting</li>
+            <li><span class="check-ico">✓</span> Detailed, shareable reports</li>
+          </ul>
+          <div class="mini-stats">
+            <div><strong>1.24M</strong><span>requests / day</span></div>
+            <div><strong>-18%</strong><span>P95 latency</span></div>
+            <div><strong>30d</strong><span>analytics window</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="overview-visual" data-tilt>
+            <div class="dash-card">
+              <div class="dash-head">
+                <div class="dash-dots"><i></i><i></i><i></i></div>
+                <span>Stackly.cloud / analytics</span>
+              </div>
+              <div class="dash-body">
+                <div class="dash-row">
+                  <div class="dash-stat">
+                    <span class="stat-label">Requests</span>
+                    <span class="stat-value">1.24M</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">P95</span>
+                    <span class="stat-value">42ms</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Errors</span>
+                    <span class="stat-value">0.2%</span>
+                  </div>
+                </div>
+                <div class="dash-bars">
+                  <span class="bar bar-1"></span>
+                  <span class="bar bar-2"></span>
+                  <span class="bar bar-3"></span>
+                  <span class="bar bar-4"></span>
+                  <span class="bar bar-5"></span>
+                  <span class="bar bar-6"></span>
+                  <span class="bar bar-7"></span>
+                  <span class="bar bar-8"></span>
+                </div>
+                <div class="ov-services">
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>api-gateway</b><span class="trace-time">trend up</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>checkout-service</b><span class="trace-time">stable</span></div>
+                  <div class="trace-row warn"><span class="trace-dot"></span><b>search-index</b><span class="trace-time">jitter</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>notifications</b><span class="trace-time">trend down</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 6. Uptime Monitoring ======= -->
+  <section class="section" id="uptime-monitoring">
+    <div class="container">
+      <div class="feature-row row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2">
+          <span class="section-tag">Uptime Monitoring</span>
+          <h3>99.99% uptime, <span class="grad-text">proven 24/7</span></h3>
+          <p>Synthetic checks from 30+ global regions track website uptime, server availability, and downtime — so you're alerted the instant something goes dark.</p>
+          <ul class="check-list">
+            <li><span class="check-ico">✓</span> Website uptime from 30+ regions</li>
+            <li><span class="check-ico">✓</span> Server & endpoint availability</li>
+            <li><span class="check-ico">✓</span> Downtime tracking with SLI history</li>
+          </ul>
+          <div class="mini-stats">
+            <div><strong>99.99%</strong><span>uptime SLA</span></div>
+            <div><strong>30+</strong><span>check regions</span></div>
+            <div><strong>24/7</strong><span>coverage</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="overview-visual" data-tilt>
+            <div class="dash-card">
+              <div class="dash-head">
+                <div class="dash-dots"><i></i><i></i><i></i></div>
+                <span>Stackly.cloud / uptime</span>
+              </div>
+              <div class="dash-body">
+                <div class="dash-row">
+                  <div class="dash-stat">
+                    <span class="stat-label">Uptime</span>
+                    <span class="stat-value">99.99%</span>
+                    <span class="stat-trend up">▲ 0.4%</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Checks</span>
+                    <span class="stat-value">1.2M</span>
+                    <span class="stat-trend up">▲ 24h</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Downtime</span>
+                    <span class="stat-value">0s</span>
+                    <span class="stat-trend up">▲ month</span>
+                  </div>
+                </div>
+                <div class="dash-bars">
+                  <span class="bar bar-1"></span>
+                  <span class="bar bar-2"></span>
+                  <span class="bar bar-3"></span>
+                  <span class="bar bar-4"></span>
+                  <span class="bar bar-5"></span>
+                  <span class="bar bar-6"></span>
+                  <span class="bar bar-7"></span>
+                  <span class="bar bar-8"></span>
+                </div>
+                <div class="ov-services">
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>app.stackly.cloud</b><span class="trace-time">up</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>api.stackly.cloud</b><span class="trace-time">up</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>status.stackly.cloud</b><span class="trace-time">up</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 7. Security Monitoring ======= -->
+  <section class="section" id="security-monitoring">
+    <div class="container">
+      <div class="feature-row row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="section-tag">Security Monitoring</span>
+          <h3>Security alerts, <span class="grad-text">threats stopped early</span></h3>
+          <p>Continuous security alerts, AI-driven threat detection, and full activity monitoring keep your cloud compliant and your data protected.</p>
+          <ul class="check-list">
+            <li><span class="check-ico">✓</span> Real-time security alerts</li>
+            <li><span class="check-ico">✓</span> Threat detection with behavioral baselines</li>
+            <li><span class="check-ico">✓</span> Full activity & access monitoring</li>
+          </ul>
+          <div class="mini-stats">
+            <div><strong>SOC 2</strong><span>Type II</span></div>
+            <div><strong>30s</strong><span>time to detect</span></div>
+            <div><strong>87%</strong><span>fewer alerts</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="overview-visual" data-tilt>
+            <div class="live-panel">
+              <h3 class="panel-title"><span class="live-dot"></span> Security monitoring</h3>
+              <div class="security-item">
+                <span class="sec-ico">⬢</span>
+                <div><b>Threat detection</b><p>Unusual access and data exfiltration patterns flagged in seconds.</p></div>
+              </div>
+              <div class="security-item">
+                <span class="sec-ico">▤</span>
+                <div><b>Misconfiguration scanning</b><p>Continuous checks against CIS benchmarks across the stack.</p></div>
+              </div>
+              <div class="security-item">
+                <span class="sec-ico">✦</span>
+                <div><b>Access anomalies</b><p>Real-time alerts for suspicious credential usage.</p></div>
+              </div>
+              <div class="security-item">
+                <span class="sec-ico">✓</span>
+                <div><b>Compliance posture</b><p>SOC 2, ISO 27001, and GDPR-ready reporting with one click.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 8. Custom Dashboards ======= -->
+  <section class="section" id="custom-dashboards">
+    <div class="container">
+      <div class="feature-row row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2">
+          <span class="section-tag">Custom Dashboards</span>
+          <h3>Dashboards that fit <span class="grad-text">your team</span></h3>
+          <p>Drag-and-drop widgets, custom metrics, and personalized monitoring views — build the exact dashboard your team needs in minutes.</p>
+          <ul class="check-list">
+            <li><span class="check-ico">✓</span> Drag-and-drop widget builder</li>
+            <li><span class="check-ico">✓</span> Custom metrics & formulas</li>
+            <li><span class="check-ico">✓</span> Personalized views & sharing</li>
+          </ul>
+          <div class="mini-stats">
+            <div><strong>30+</strong><span>widget types</span></div>
+            <div><strong>1-click</strong><span>templates</span></div>
+            <div><strong>∞</strong><span>dashboards</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="overview-visual" data-tilt>
+            <div class="dash-card">
+              <div class="dash-head">
+                <div class="dash-dots"><i></i><i></i><i></i></div>
+                <span>Stackly.cloud / custom-dash</span>
+              </div>
+              <div class="dash-body">
+                <div class="dash-row">
+                  <div class="dash-stat">
+                    <span class="stat-label">Widgets</span>
+                    <span class="stat-value">14</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Editors</span>
+                    <span class="stat-value">6</span>
+                  </div>
+                  <div class="dash-stat">
+                    <span class="stat-label">Views</span>
+                    <span class="stat-value">3</span>
+                  </div>
+                </div>
+                <div class="dash-bars">
+                  <span class="bar bar-1"></span>
+                  <span class="bar bar-2"></span>
+                  <span class="bar bar-3"></span>
+                  <span class="bar bar-4"></span>
+                  <span class="bar bar-5"></span>
+                  <span class="bar bar-6"></span>
+                  <span class="bar bar-7"></span>
+                  <span class="bar bar-8"></span>
+                </div>
+                <div class="ov-services">
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>SRE overview</b><span class="trace-time">shared</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>Business KPIs</b><span class="trace-time">shared</span></div>
+                  <div class="trace-row warn"><span class="trace-dot"></span><b>On-call board</b><span class="trace-time">draft</span></div>
+                  <div class="trace-row ok"><span class="trace-dot"></span><b>FinOps view</b><span class="trace-time">shared</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 9. Multi-Cloud Monitoring ======= -->
+  <section class="section" id="multi-cloud">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Multi-Cloud Monitoring</span>
+        <h2 class="section-title">Monitor every cloud <span class="grad-text">from one place</span></h2>
+        <p class="section-sub">Native integrations for all major cloud and container platforms — unified metrics across every account.</p>
+      </div>
+
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="integration-card">
+            <div class="integration-img">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M36 23c0-5.5-4-10-9-10-4.2 0-7.8 2.8-8.8 6.5-3 .3-5.2 2.8-5.2 5.8 0 3.2 2.6 5.8 5.8 5.8h13c2.8 0 5.2-2.4 5.2-5.2 0-2.5-1.8-4.5-4-5.2v.3z" fill="#FF9900"/><path d="M15 31c2 2.5 5 3.8 8 3.8 4 0 7.5-2.5 9-6h-3.5c-1 2-3 3.2-5.5 3.2-3 0-5.5-1.8-6.5-4.5l-1.5 3.5z" fill="#232F3E"/></svg>
+            </div>
+            <div class="integration-body">
+              <strong>AWS</strong>
+              <span>EC2 · ECS · Lambda</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="integration-card">
+            <div class="integration-img">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4L42 18 24 42 6 18z" fill="#0078D4"/><path d="M6 18l18 24 18-24H6z" fill="#0057A8"/></svg>
+            </div>
+            <div class="integration-body">
+              <strong>Microsoft Azure</strong>
+              <span>AKS · Functions</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="integration-card">
+            <div class="integration-img">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4L40.6 13.6v19.2L24 42.4 7.4 32.8V13.6z" fill="#4285F4"/><path d="M24 18l10 5.7v11.4l-10 5.7-10-5.7V23.7z" fill="#fff"/></svg>
+            </div>
+            <div class="integration-body">
+              <strong>Google Cloud</strong>
+              <span>GKE · Cloud Run</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="integration-card">
+            <div class="integration-img">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="20" fill="#326CE5"/><circle cx="24" cy="24" r="6" fill="#fff"/><path d="M24 4v14M24 30v14M4 24h14M30 24h14M9 9l10 10M29 29l10 10M39 9L29 19M19 29L9 39" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="integration-body">
+              <strong>Kubernetes</strong>
+              <span>k8s · Helm · K3s</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="integration-card">
+            <div class="integration-img">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M44 20c-1-5-5-8-10-8-1 0-2 0-3 .2-1-4-4-7-8-7-2 0-4 1-5 2-1 0-2 0-3 .2C13 7 10 9 9 12c-4 0-7 3-7 7 0 1 0 2 .2 3-2 1-3 3-3 6 0 4 3 7 7 7h28c5 0 9-4 9-9 0-3-1-5-3-7 .5-1 .8-2 .8-3z" fill="#2496ED"/><rect x="8" y="19" width="4" height="4" rx=".5" fill="#fff"/><rect x="14" y="19" width="4" height="4" rx=".5" fill="#fff"/><rect x="20" y="19" width="4" height="4" rx=".5" fill="#fff"/><rect x="26" y="19" width="4" height="4" rx=".5" fill="#fff"/><rect x="14" y="13" width="4" height="4" rx=".5" fill="#fff"/><rect x="20" y="13" width="4" height="4" rx=".5" fill="#fff"/><rect x="26" y="13" width="4" height="4" rx=".5" fill="#fff"/><rect x="20" y="25" width="4" height="4" rx=".5" fill="#fff"/></svg>
+            </div>
+            <div class="integration-body">
+              <strong>Docker</strong>
+              <span>Containers · Swarm</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="integration-card">
+            <div class="integration-img">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C12.95 4 4 12.95 4 24c0 8.84 5.74 16.32 13.7 18.97 1 .2 1.37-.43 1.37-.96v-3.37c-5.57 1.22-6.74-2.68-6.74-2.68-.91-2.31-2.22-2.93-2.22-2.93-1.81-1.24.14-1.21.14-1.21 2 .14 3.06 2.06 3.06 2.06 1.78 3.05 4.67 2.17 5.81 1.66.18-1.29.7-2.17 1.27-2.67-4.44-.5-9.11-2.22-9.11-9.88 0-2.18.78-3.97 2.06-5.37-.2-.5-.9-2.52.2-5.25 0 0 1.68-.54 5.5 2.06 1.6-.44 3.3-.67 5-.68 1.7.01 3.4.23 5 .68 3.82-2.6 5.5-2.06 5.5-2.06 1.1 2.73.4 4.75.2 5.25 1.28 1.4 2.06 3.19 2.06 5.37 0 7.68-4.68 9.38-9.13 9.87.72.62 1.36 1.85 1.36 3.73v5.55c0 .54.36 1.17 1.38.97C38.26 40.32 44 32.84 44 24 44 12.95 35.05 4 24 4z" fill="#24292E"/></svg>
+            </div>
+            <div class="integration-body">
+              <strong>GitHub</strong>
+              <span>Actions · Deploys</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="404.html" class="btn btn-primary btn-lg btn-glow">See how Stackly monitors clouds</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 10. Reports & Analytics ======= -->
+  <section class="section" id="reports">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Reports & Analytics</span>
+        <h2 class="section-title">Reports on autopilot, <span class="grad-text">data on demand</span></h2>
+        <p class="section-sub">Automated reports, performance summaries, and exportable data — delivered straight to your inbox.</p>
+      </div>
+
+      <div class="row g-4 features-grid">
+        <div class="col-md-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-reports.webp" alt="Automated reports" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-trace"></span></div>
+            <h3>Automated reports</h3>
+            <p>Schedule weekly or monthly reliability, uptime, and cost reports to your whole team automatically.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-summaries.webp" alt="Performance summaries" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-monitor"></span></div>
+            <h3>Performance summaries</h3>
+            <p>Concise summaries of SLOs, latency, and error budgets with trends your leadership will love.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-export.webp" alt="Exportable data" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-log"></span></div>
+            <h3>Exportable data</h3>
+            <p>Export metrics, logs, and traces via API or CSV — integrate with your data warehouse today.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 11. Feature Comparison ======= -->
+  <section class="section" id="comparison">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Feature Comparison</span>
+        <h2 class="section-title">Free vs Pro vs <span class="grad-text">Enterprise</span></h2>
+        <p class="section-sub">Compare available features across every plan and pick the right fit for your team.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table-dark-custom">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Pro</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monitored servers</td><td>5</td><td>100</td><td class="yes">Unlimited</td></tr>
+            <tr><td>Real-time monitoring</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Smart alerts</td><td>10 / mo</td><td class="yes">Unlimited + AI</td><td class="yes">Unlimited + AI</td></tr>
+            <tr><td>Data retention</td><td>7 days</td><td>30 days</td><td class="yes">Custom (5 yr)</td></tr>
+            <tr><td>Custom dashboards</td><td>1</td><td class="yes">Unlimited</td><td class="yes">Unlimited</td></tr>
+            <tr><td>Automated reports & exports</td><td class="no">—</td><td class="yes">Weekly</td><td class="yes">Full + API</td></tr>
+            <tr><td>SSO / SAML / RBAC</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+            <tr><td>Support</td><td>Community</td><td>Priority</td><td class="yes">Dedicated CSM</td></tr>
+            <tr><td>Uptime SLA</td><td class="no">—</td><td>99.9%</td><td class="yes">99.99%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center mt-5">
+        <a href="404.html" class="btn btn-primary btn-lg btn-glow">Compare plans & pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= 12. Why Stackly ======= -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">Why Stackly</span>
+        <h2 class="section-title">Built for teams that <span class="grad-text">move fast</span></h2>
+        <p class="section-sub">The reasons 5,000+ companies rely on Stackly every single day.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center features-grid">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-fast.webp" alt="Fast performance" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-monitor"></span></div>
+            <h3>Fast</h3>
+            <p>Sub-second telemetry, instant queries across billions of data points, and alerts that arrive first.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-reliable.webp" alt="Reliable uptime" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-bell"></span></div>
+            <h3>Reliable</h3>
+            <p>99.99% uptime SLA with redundant ingest pipelines and region failover built in.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-scalable.webp" alt="Scalable infrastructure" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-ai"></span></div>
+            <h3>Scalable</h3>
+            <p>From 5 servers to 50,000 — Stackly scales linearly with zero data loss or slowdown.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-secure.webp" alt="Secure platform" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-shield"></span></div>
+            <h3>Secure</h3>
+            <p>SOC 2 Type II, ISO 27001, AES-256 encryption, and region-locked data residency.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-easy.webp" alt="Easy to use" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-log"></span></div>
+            <h3>Easy to use</h3>
+            <p>Live in under 10 minutes with one-command installs and drag-and-drop dashboards.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card" data-tilt>
+            <div class="card-img">
+              <img src="assets/img/ft-cost.webp" alt="Cost-effective monitoring" loading="lazy" />
+            </div>
+            <div class="feature-icon"><span class="fi fi-cash"></span></div>
+            <h3>Cost-effective</h3>
+            <p>Predictable pricing that replaces three tools for half the cost of your stack.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CTA band ======= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Try every feature free.</h2>
+          <p>Full access for 14 days — no credit card, no sales call required.</p>
+        </div>
+        <a href="404.html" class="btn btn-light btn-lg">Start free trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Newsletter ======= -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <h2 class="cta-title">Stay Updated with Stackly</h2>
+        <p class="cta-sub">Get weekly insights on cloud monitoring, incident response, and SRE best practices — straight to your inbox.</p>
+        <div class="cta-actions">
+          <form class="newsletter-form" onsubmit="event.preventDefault(); var em=this.querySelector('input[type=email]'); if(em && em.value.trim() && !/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(em.value.trim())){em.classList.add('is-invalid'); var m=this.querySelector('.email-invalid-msg'); if(!m){m=document.createElement('div');m.className='email-invalid-msg';m.style.cssText='color:#f87171;font-size:0.82rem;margin-top:6px;display:none;';em.parentNode.appendChild(m);} m.textContent='Please enter a valid email (e.g. you@company.com).'; m.style.display='block'; return;} this.querySelector('button').textContent='Subscribed ✓';">
+            <input type="email" class="form-control" placeholder="you@company.com" required />
+            <button type="submit" class="btn btn-primary btn-lg btn-glow">Subscribe</button>
+          </form>
+        </div>
+        <small class="cta-note">No spam, ever. Unsubscribe anytime.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+      <footer class="footer">
+    <div class="container">
+      <div class="row g-4 footer-top">
+        <div class="col-lg-4">
+          <a class="navbar-brand mb-3" href="index.html">
+            <img class="brand-logo" src="assets/img/logo.webp" alt="Stackly" />
+          </a>
+          <p class="footer-desc">The all-in-one cloud monitoring and observability platform for modern SaaS teams. Metrics, logs, and traces — beautifully unified.</p>
+                    <div class="socials">
+            <a href="404.html" aria-label="Instagram"><span class="soc soc-ig"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.72 3.72 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07Zm0 1.72c-3.15 0-3.52.01-4.77.07-1.08.05-1.67.23-2.06.38-.52.2-.89.44-1.28.83-.39.39-.63.76-.83 1.28-.15.39-.33.98-.38 2.06-.06 1.25-.07 1.62-.07 4.77s.01 3.52.07 4.77c.05 1.08.23 1.67.38 2.06.2.52.44.89.83 1.28.39.39.76.63 1.28.83.39.15.98.33 2.06.38 1.25.06 1.62.07 4.77.07s3.52-.01 4.77-.07c1.08-.05 1.67-.23 2.06-.38.52-.2.89-.44 1.28-.83.39-.39.63-.76.83-1.28.15-.39.33-.98.38-2.06.06-1.25.07-1.62.07-4.77s-.01-3.52-.07-4.77c-.05-1.08-.23-1.67-.38-2.06-.2-.52-.44-.89-.83-1.28-.39-.39-.76-.63-1.28-.83-.39-.15-.98-.33-2.06-.38-1.25-.06-1.62-.07-4.77-.07Zm0 2.94a5.19 5.19 0 1 1 0 10.37 5.19 5.19 0 0 1 0-10.37Zm0 8.56a3.37 3.37 0 1 0 0-6.74 3.37 3.37 0 0 0 0 6.74Zm6.64-8.77a1.21 1.21 0 1 1-2.42 0 1.21 1.21 0 0 1 2.42 0Z"/></svg></span></a>
+            <a href="404.html" aria-label="Facebook"><span class="soc soc-fb"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z"/></svg></span></a>
+            <a href="404.html" aria-label="YouTube"><span class="soc soc-yt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.55 12 3.55 12 3.55s-7.51 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.51 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg></span></a>
+            <a href="404.html" aria-label="Twitter / X"><span class="soc soc-x"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"/></svg></span></a>
+            <a href="404.html" aria-label="LinkedIn"><span class="soc soc-li"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45Z"/></svg></span></a>
+            <a href="404.html" aria-label="GitHub"><span class="soc soc-gh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg></span></a>
+          </div>
+
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">Cloud Monitoring</a></li>
+            <li><a href="solutions.html">Infrastructure Monitoring</a></li>
+            <li><a href="solutions.html">Application Monitoring</a></li>
+            <li><a href="solutions.html">Network Monitoring</a></li>
+            <li><a href="solutions.html">Server Monitoring</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="404.html">Documentation</a></li>
+            <li><a href="404.html">Blog</a></li>
+            <li><a href="404.html">Tutorials</a></li>
+            <li><a href="404.html">Case Studies</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="404.html">About Us</a></li>
+            <li><a href="404.html">Contact Us</a></li>
+            <li><a href="404.html">Careers</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Stackly. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="404.html">Privacy Policy</a>
+          <span class="sep">|</span>
+          <a href="404.html">Terms &amp; Conditions</a>
+          <span class="sep">|</span>
+          <a href="404.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
