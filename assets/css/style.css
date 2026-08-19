@@ -818,7 +818,11 @@ a { text-decoration: none; color: inherit; }
 .back-top:hover { transform: translateY(-4px); }
 
 /* ---------- GSAP reveal helpers ---------- */
-.gs-reveal { opacity: 0; will-change: transform, opacity; }
+.gsap-reveal { opacity: 0; will-change: transform, opacity; }
+.page-load {
+  opacity: 1;
+  transform: translateY(0);
+}
 .overview-img { will-change: transform, opacity; }
 
 /* ---------- Responsive ---------- */
@@ -933,5 +937,5 @@ a { text-decoration: none; color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .gs-reveal { opacity: 1; }
+  .gs-reveal, .page-load { opacity: 1; transform: none; }
 }

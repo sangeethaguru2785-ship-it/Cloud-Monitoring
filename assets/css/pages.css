@@ -6,6 +6,7 @@
 .page-hero {
   padding: 180px 0 90px;
   position: relative;
+  z-index: 1;
   overflow: hidden;
   text-align: center;
 }
@@ -58,7 +59,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #8b8cf7;
   text-shadow: 0 0 80px rgba(99, 102, 241, 0.35);
 }
 
